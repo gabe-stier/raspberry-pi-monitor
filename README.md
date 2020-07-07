@@ -1,0 +1,1 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/690db89540074a9e81995921f6bc5271)](https://www.codacy.com/manual/gabe-stier/raspberry-pi-monitor?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gabe-stier/raspberry-pi-monitor&amp;utm_campaign=Badge_Grade)
