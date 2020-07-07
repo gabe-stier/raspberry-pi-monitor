@@ -1,8 +1,8 @@
-'''
-Created on Jul 6, 2020
-
-@author: Gabe Stier <gabezter4@yahoo.com>
-'''
+#################################
+# Created on Jul 6, 2020        #
+#                               #
+# @author: gabezter4            #
+#################################
 
 from flask import Flask
 # import admin

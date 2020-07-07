@@ -1,8 +1,8 @@
-'''
-Created on Jul 6, 2020
-
-@author: gabez
-'''
+#################################
+# Created on Jul 6, 2020        #
+#                               #
+# @author: gabezter4            #
+#################################
 import sqlite3
 import hashlib
 from datetime import datetime
@@ -41,7 +41,6 @@ def create_token():
 
 def check_token(token):
     conn, db = connect()
-    
     db.execute('SELECT token, expired FROM auth WHERE token=', token)
     row = db.fectchone()
     if(row[0] != token):

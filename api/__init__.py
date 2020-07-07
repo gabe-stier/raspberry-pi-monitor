@@ -1,9 +1,8 @@
-'''
-Created on Jul 6, 2020
-
-@author: gabez
-'''
-# from blueprints import api
+#################################
+# Created on Jul 6, 2020        #
+#                               #
+# @author: gabezter4            #
+#################################
 from flask import request
 from flask.blueprints import Blueprint
 from flask import Response, abort

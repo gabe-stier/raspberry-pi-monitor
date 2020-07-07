@@ -1,8 +1,8 @@
-'''
-Created on Jul 6, 2020
-
-@author: gabez
-'''
+#################################
+# Created on Jul 6, 2020        #
+#                               #
+# @author: gabezter4            #
+#################################
 from flask.wrappers import Response
 import json
 class Vital(Exception):

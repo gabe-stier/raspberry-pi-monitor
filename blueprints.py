@@ -1,8 +1,8 @@
-'''
-Created on Jul 6, 2020
-
-@author: gabez
-'''
+#################################
+# Created on Jul 6, 2020        #
+#                               #
+# @author: gabezter4            #
+#################################
 from flask.blueprints import Blueprint
 
 pi_info = Blueprint('pi_info', __name__, url_prefix='/pi')

@@ -1,6 +1,6 @@
-'''
-Created on Jul 6, 2020
-
-@author: gabez
-'''
+#################################
+# Created on Jul 6, 2020        #
+#                               #
+# @author: gabezter4            #
+#################################
 from blueprints import admin
