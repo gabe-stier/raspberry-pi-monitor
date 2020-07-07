@@ -7,8 +7,7 @@ import sqlite3
 import hashlib
 from datetime import datetime
 
-
-def post_auth_token(token, name):
+def post_auth_token(token, name, date):
     success = False
     conn, db = connect()
     if table_exist('auth') == False:
@@ -17,11 +16,10 @@ def post_auth_token(token, name):
             creation_date TEsXT, 
             expired BOOLEAN NOT NULL CHECK (expired IN (0,1)),
             name VARCHAR(50) NOT NULL,
-            token VARCHAR(256) NOT NULL UNIQUE
+            token VARCHAR(64) NOT NULL UNIQUE
         ''')
         commit(conn)
-    creation_date = datetime.now()
-    db.execute('INSERT INTO auth VALUES(?,?,?,?)', (creation_date, 0, name, token))
+    db.execute('INSERT INTO auth VALUES(?,?,?,?)', (date, 0, name, token))
     commit(conn)
     conn.close()
     success = True
@@ -33,11 +31,14 @@ def post_vital_sign(sign, value):
     
     return success
 
-def create_token():
-    success = False
-    conn, db = connect()
-    
-    return success
+def create_token(name):
+    date = datetime.now()
+    h = hashlib.sha256()
+    h.update(name.encode('utf-8'))
+    h.update(str(date).encode('utf-8'))
+    hash = h.hexdigest()
+    post_auth_token(hash, name, date)
+    return hash
 
 def check_token(token):
     conn, db = connect()
@@ -54,11 +55,6 @@ def get_vitals(pi=None):
     conn, db = connect()
     if pi == None:
         pass
-    
-    return success
-
-def check_auth_token(token):
-    success = False
     
     return success
 
