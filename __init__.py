@@ -8,13 +8,19 @@ from flask import Flask
 # import admin
 # import pi_info
 import api
+from sql import create_tables
 
-app = Flask(__name__)
-app.register_blueprint(api.api_bp)
-app.config.from_mapping({"DEBUG": True})
-# app.register_blueprint(pi_info)
-# app.register_blueprint(admin)
+def init():
+    app = Flask(__name__)
+    app.register_blueprint(api.api_bp)
+    app.config.from_mapping({"DEBUG": True})
+    # app.register_blueprint(pi_info)
+    # app.register_blueprint(admin)
+    
+    @app.route('/')
+    def index():
+        return "INDEX"
 
-@app.route('/')
-def index():
-    return "INDEX"
+
+if __name__ == '__main__':
+    init()
